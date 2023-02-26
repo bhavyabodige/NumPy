@@ -1,0 +1,565 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMgKJYBYlhINr99eNO+H9Mh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/bhavyabodige/NumPy/blob/main/Types%20of%20Data%20distribution\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "7xLj5R6h0vZM"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                **  Types of Data Distribution **\n",
+        "                \n",
+        " Data Distribution is a list of all possible values, and how often each value occurs.\n",
+        " Such lists are important when working with statistics and data science.\n",
+        " The random module offer methods that returns randomly generated data distributions.\n",
+        "NumPy offers the random module to work with random numbers."
+      ],
+      "metadata": {
+        "id": "x1Po-yx609z7"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "          1.  Normal Data distribution/Gaussian Distribution \n",
+        "          \n",
+        " The Normal Distribution is one of the most important distributions.It fits the probability distribution of many events, eg. IQ Scores, Heartbeat etc. \n",
+        " Use the random.normal() method to get a Normal Data Distribution.\n",
+        "  It has three parameters: 1.)loc - (Mean) where the peak of the bell exists. 2.) scale - (Standard Deviation) how flat the graph distribution should be. \n",
+        "                          3.)size - The shape of the returned array.\n",
+        " The curve of a Normal Distribution is also known as the Bell Curve because of the bell-shaped curve."
+      ],
+      "metadata": {
+        "id": "eZhuwTh31STF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Generate a random normal distribution of size 2x3:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.normal(size=(2, 3))\n",
+        "\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UQ6UzF1dDRUH",
+        "outputId": "17673236-2067-44e8-e39e-6e81a5722818"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0.00496889 -0.51039274  0.25985971]\n",
+            " [-0.39015079  0.03676147 -0.52778876]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "qK3mq6Rw1esX"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "               2. Binomial Distribution\n",
+        "\n",
+        " Binomial Distribution is a Discrete Distribution.\n",
+        " It describes the outcome of binary scenarios, e.g. toss of a coin, it will either be head or tails.\n",
+        " It has three parameters:  n - number of trials, p - probability of occurence of each trial (e.g. for toss of a coin 0.5 each), size - The shape of the returned array.\n",
+        "   Discrete Distribution:The distribution is defined at separate set of events, e.g. a coin toss's result is discrete as it can be only head or tails whereas height of people is continuous as it can be 170, 170.1, 170.11 and so on.\n",
+        "  Example : Given 10 trials for coin toss generate 10 data points:"
+      ],
+      "metadata": {
+        "id": "rGs0Hrod1NEI"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from numpy import random\n",
+        "\n",
+        "x = random.binomial(n=10, p=0.5, size=10)\n",
+        "\n",
+        "print(x)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sMMPjFhkDvn7",
+        "outputId": "d411a291-80eb-4c8f-9ff2-dca6d28c0d93"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[5 6 3 8 4 4 5 3 7 3]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                  3.  Uniform Distribution \n",
+        "\n",
+        " Used to describe probability where every event has equal chances of occuring.   \n",
+        " Example : Generation of random numbers.\n",
+        " It has three parameters:  a - lower bound - default 0 .0, b - upper bound - default 1.0, size - The shape of the returned array.\n"
+      ],
+      "metadata": {
+        "id": "l-iphiep2Chx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a 2x3 uniform distribution sample:\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.uniform(size=(2, 3))\n",
+        "\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "351KzvGkFHt0",
+        "outputId": "906cbe54-e9de-420f-89c3-e465837308e5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0.02725018 0.64520822 0.77613818]\n",
+            " [0.13417784 0.27171306 0.9001944 ]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "             ** 4. Logistic Distribution **\n",
+        "\n",
+        " Logistic Distribution is used to describe growth. Used extensively in machine learning in logistic regression, neural networks etc.\n",
+        " It has three parameters:loc - mean, where the peak is. Default 0, scale - standard deviation, the flatness of distribution. Default 1, size - The shape of the returned array.\n",
+        " \n",
+        "\n",
+        "        **Difference Between Logistic and Normal Distribution**\n",
+        "\n",
+        "Both distributions are near identical, but logistic distribution has more area under the tails, meaning it represents more possibility of occurrence of an event further away from mean.\n",
+        "  For higher value of scale (standard deviation) the normal and logistic distributions are near identical apart from the peak."
+      ],
+      "metadata": {
+        "id": "Z9g6GmTh2SRr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Draw 2x3 samples from a logistic distribution with mean at 1 and stddev 2.0:\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.logistic(loc=1, scale=2, size=(2, 3))\n",
+        "\n",
+        "print(x)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "14WLJfLHGhDN",
+        "outputId": "e1fc6717-71bb-420d-b0bb-7c02eb68388f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[-0.73547844  4.88453493 -2.90287386]\n",
+            " [ 0.21381401  5.63401321 -5.75555647]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                  **5. Poisson Distribution**\n",
+        "\n",
+        " Poisson Distribution is a Discrete Distribution.\n",
+        " It estimates how many times an event can happen in a specified time. e.g. If someone eats twice a day what is the probability he will eat thrice?\n",
+        " It has two parameters:  lam - rate or known number of occurrences e.g. 2 for above problem and size - The shape of the returned array.\n"
+      ],
+      "metadata": {
+        "id": "X2x2GFiv2wKP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#  Generate a random 1x10 distribution for occurrence 2:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.poisson(lam=2, size=10)\n",
+        "\n",
+        "print(x)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XKOFWSi8G7Pl",
+        "outputId": "5249bcbd-9771-43ca-bb5c-6b0148b3acff"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1 1 1 1 3 0 4 2 2 4]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "            **  6. Multinomial  Distribution **\n",
+        "\n",
+        " Multinomial distribution is a generalization of binomial distribution.\n",
+        " It describes outcomes of multi-nomial scenarios unlike binomial where scenarios must be only one of two. e.g. Blood type of a population, dice roll outcome.\n",
+        " It has three parameters:  n - number of possible outcomes (e.g. 6 for dice roll), \n",
+        "                            pvals - list of probabilties of outcomes (e.g. [1/6, 1/6, 1/6, 1/6, 1/6, 1/6] for dice roll).\n",
+        "                           size - The shape of the returned array.\n",
+        "                           \n",
+        "** Note:**  Multinomial samples will NOT produce a single value! They will produce one value for each pval.\n",
+        "\n",
+        "**   Note:** As they are generalization of binomial distribution their visual representation and similarity of normal distribution is same as that of multiple binomial distributions.\n"
+      ],
+      "metadata": {
+        "id": "WY5q1VRK3MMD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#   Draw out a sample for dice roll:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.multinomial(n=6, pvals=[1/6, 1/6, 1/6, 1/6, 1/6, 1/6], size = 3)\n",
+        "\n",
+        "print(x)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aEc8Z4jRIF64",
+        "outputId": "4cf73741-9a7c-4dad-9333-f91e2488ce2e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 0 3 1 1 0]\n",
+            " [1 1 1 2 0 1]\n",
+            " [3 1 1 0 1 0]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Td_OJqs03sbL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "              ** 7. Exponential  Distribution **\n",
+        "\n",
+        "Exponential distribution is used for describing time till next event e.g. failure/success etc.\n",
+        "  It has two parameters:  scale - inverse of rate ( see lam in poisson distribution ) defaults to 1.0 and size - The shape of the returned array.\n",
+        "\n",
+        "        \n",
+        "            **Relation Between Poisson and Exponential Distribution**\n",
+        "Poisson distribution deals with number of occurences of an event in a time period whereas exponential distribution deals with the time between these events.\n"
+      ],
+      "metadata": {
+        "id": "NYA7z5e23tCL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#  Draw out a sample for exponential distribution with 2.0 scale with 2x3 size:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.exponential(scale=2, size=(2, 3))\n",
+        "\n",
+        "print(x)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pCt9DKIoJVIw",
+        "outputId": "ad12f48b-8815-4ed9-fab5-fc67cb50bf59"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[6.16131868 0.02247024 0.39427366]\n",
+            " [0.05374382 1.06484864 0.29433468]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                 **8. Chi square Distribution**\n",
+        "\n",
+        "Chi Square distribution is used as a basis to verify the hypothesis.\n",
+        "It has two parameters:  df - (degree of freedom) and size - The shape of the returned array."
+      ],
+      "metadata": {
+        "id": "XKUdnoud36va"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#  Draw out a sample for chi squared distribution with degree of freedom 2 with size 2x3:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.chisquare(df=2, size=(2, 3))\n",
+        "\n",
+        "print(x)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gKuwdvk_J1sH",
+        "outputId": "426a7c09-8db5-4e4e-9857-1b151a960797"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0.0785586  4.87565838 0.06593553]\n",
+            " [0.0897264  1.03035032 0.47617496]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                     ** 9. Rayleigh  Distribution**\n",
+        " \n",
+        " \n",
+        " Rayleigh distribution is used in signal processing.\n",
+        " It has two parameters:  scale - (standard deviation) decides how flat the distribution will be default 1.0) and size - The shape of the returned array."
+      ],
+      "metadata": {
+        "id": "2mpFNr254Fd8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "\n",
+        "#   Draw out a sample for rayleigh distribution with scale of 2 with size 2x3:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.rayleigh(scale=2, size=(2, 3))\n",
+        "\n",
+        "print(x)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "91vJAkI9KtKa",
+        "outputId": "e49995fe-4933-4dea-eb5d-918337d6b2a1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[2.00214069 2.63646511 5.10734237]\n",
+            " [2.38411401 2.2930074  7.43632953]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                   **  10. Pareto  Distribution**\n",
+        "\n",
+        "\n",
+        " A distribution following Pareto's law i.e. 80-20 distribution (20% factors cause 80% outcome).\n",
+        "It has two parameters : a - shape parameter and size - The shape of the returned array."
+      ],
+      "metadata": {
+        "id": "WSab3pMs4VcC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#  Draw out a sample for pareto distribution with shape of 2 with size 2x3:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.pareto(a=2, size=(2, 3))\n",
+        "\n",
+        "print(x)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TFPfSffDLI-y",
+        "outputId": "6464627a-ba69-409e-a0c5-5d241d9a1ca0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[0.26999171 1.37542885 1.08351724]\n",
+            " [0.19154681 0.50413992 0.26385986]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "                **11.  Zipf  Distribution**\n",
+        "\n",
+        "\n",
+        "Zipf distritutions are used to sample bold text data based on zipf's law.\n",
+        "\n",
+        "**Zipf's Law: **In a collection, the nth common term is 1/n times of the most common term. E.g. the 5th most common word in English occurs nearly 1/5 times as often as the most common word.\n",
+        "\n",
+        "It has two parameters:  a - distribution parameter and size - The shape of the returned array."
+      ],
+      "metadata": {
+        "id": "qS_expy44gby"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Draw out a sample for zipf distribution with distribution parameter 2 with size 2x3:\n",
+        "\n",
+        "from numpy import random\n",
+        "\n",
+        "x = random.zipf(a=2, size=(2, 3))\n",
+        "\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RND2tbqwLdYt",
+        "outputId": "df26a874-e7bd-454f-ee03-4a6ca4f5fa0f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 2 11  1]\n",
+            " [ 2  1  1]]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
